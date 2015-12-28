@@ -1,0 +1,148 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="Angular.js"></script>
+         <script src="Barchart.js"></script>
+         <script src="jquery.js"></script>
+         <script src="d3.js"></script>
+          <link rel="stylesheet" type="text/css" href="BarChart.css">
+           <link rel="stylesheet" type="text/css" href="commonHeader.css">
+
+           <script> 
+          
+            $(function() {
+
+            $('body').css('display', 'none');
+
+            $('body').fadeIn(1500);
+
+
+            $('.link').click(function(event) {
+
+            event.preventDefault();
+
+            newLocation = this.href;
+
+            $('body').fadeOut(1500, newpage);
+
+            });
+
+            function newpage() {
+
+            window.location = newLocation;
+
+            }
+
+            });
+
+        </script> 
+        
+    </head>
+   <body ng-app>
+       <div ng-include src="'commonHeader.html'"></div>
+       <div id="page_wrapper">
+       <div id="mainContainer">
+             <div id="metaltop-lilac">
+	<ul>
+         <li><a href="DashBoard.html">List</a></li>
+        <li class="active"><a href="#">Product</a></li>
+        <li><a href="Analysis.html">Analysis</a></li>
+	</ul>
+</div>
+        <div id="mainTitle">
+            <div style="graph_title"><h1>Sale 2013</h1></div>
+            <div id="graph1" class="graph-container" ></div>            
+        </div>
+           
+         <div id="mainTitle1"> 
+             <div style="graph_title"><h1>Sale 2014</h1></div>
+            <div id="graph2" class="graph-container"></div>
+         </div> 
+           
+           <div id="mainTitle2"> 
+             <div style="graph_title"><h1>Sale 2015</h1></div>
+            <div id="graph3" class="graph-container"></div>
+         </div>
+        </div>
+       </div>
+      <div ng-include src="'commonFooter.html'"> </div>
+    </body>
+    <script>
+        var barData1 = [{
+    'x': 'Jan',
+    'y': 5
+  }, {
+    'x': 'Feb',
+    'y': 20
+  }, {
+    'x': 'March',
+    'y': 10
+  }, {
+    'x': 'April',
+    'y': 40
+  }, {
+    'x': 'May',
+    'y': 5
+  }, {
+    'x': 'June',
+    'y': 60
+  }];
+  var barData2 = [{
+    'x': 'Jan',
+    'y': 15
+  }, {
+    'x': 'Feb',
+    'y': 40
+  }, {
+    'x': 'March',
+    'y': 30
+  }, {
+    'x': 'April',
+    'y': 70
+  }, {
+    'x': 'May',
+    'y': 55
+  }, {
+    'x': 'June',
+    'y': 65
+  }];
+  var barData3 = [{
+    'x': 'Jan',
+    'y': 25
+  }, {
+    'x': 'Feb',
+    'y': 20
+  }, {
+    'x': 'March',
+    'y': 60
+  }, {
+    'x': 'April',
+    'y': 80
+  }, {
+    'x': 'May',
+    'y': 45
+  }, {
+    'x': 'June',
+    'y': 35
+  }];
+  var finalArray=[];
+  finalArray.push(barData1);
+  finalArray.push(barData2);
+  finalArray.push(barData3);
+  var graphIDArray=[];
+  graphIDArray.push('graph1');
+  graphIDArray.push('graph2');
+  graphIDArray.push('graph3');
+  console.log(barData1);
+  for(var i=0;i<finalArray.length;i++)
+  {
+      if(i<graphIDArray.length)
+      {
+      InitChart(finalArray[i],graphIDArray[i]);
+  }
+  }
+        
+        </script>
+</html>

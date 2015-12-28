@@ -1,0 +1,41 @@
+
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="commonScript.js"></script>
+        <script type="text/javascript" src="loginScript.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="loginPageCss.css">
+        
+    </head>
+    
+    
+    <body onload="back_block()" bgcolor="#6699FF" >
+        <div id="login_form" ng-app="" ng-controller="loginController">
+            
+         <center> 
+         <fieldset  class="fieldset-Login">
+            
+            <legend class="h1-Style">Identify Yourself</legend>
+            
+            <table class="tableClassLogin" align="center" cellpadding="5" cellspacing="5">
+              <tr>
+                <td class="loginLabel">User Name :</td><td><input type="text"  ng-model="userName"/>
+                </td>
+              </tr>
+              <tr>
+                <td class="loginLabel">Password  :</td><td><input type="password" ng-model="password" />
+                </td>
+              </tr>
+             </table>
+            
+            <br/>
+                    <input type="submit" ng-click="login()" name="login" value="Log In" class="loginButton"/>
+         </fieldset>
+         </center>
+                     
+       </div>
+</body>
+</html>

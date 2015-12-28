@@ -1,0 +1,42 @@
+
+.h1-Style{
+    color: #FFFF00;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.loginLabel {
+    white-space: nowrap;
+}
+
+.tableClassLogin{
+    padding-top: 20px;
+    text-align: center;
+    table-layout: auto;
+    font-size: 18px;
+    font-style: oblique;
+    font-weight: 100;
+    color: #FFFFFF;
+}
+
+.loginButton{
+    text-align: center;
+    table-layout: auto;
+    font-size: 18px;
+    font-weight: 200;
+    color:#606060;
+   
+}
+
+.fieldset-Login{
+    width: 400px;     
+}
+
+body{
+    background-image:url("images/bg-login.jpg");
+}
+
+#login_form{
+    padding-top: 180px;
+}

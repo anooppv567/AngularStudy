@@ -1,0 +1,74 @@
+
+<html >
+    <head>
+        <title>DashBoard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" type="text/css" href="DashBoard.css">
+             <link rel="stylesheet" type="text/css" href="tableCSS.css">
+          <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+          <script type="text/javascript" src="DashBoard.js"></script>
+           <script>
+               
+            $(function() {
+
+            $('body').css('display', 'none');
+
+            $('body').fadeIn(1500);
+
+
+            $('.link').click(function(event) {
+
+            event.preventDefault();
+
+            newLocation = this.href;
+
+            $('body').fadeOut(1500, newpage);
+
+            });
+
+            function newpage() {
+
+            window.location = newLocation;
+
+            }
+
+            });
+            
+            </script>
+    </head>
+    
+    <body ng-app="customApp" ng-controller="dashBoardController">
+        
+        <div ng-include src="'commonHeader.html'"> </div>
+        <div id ="mainContainer">
+            <div id="metaltop-lilac">
+	<ul>
+		<li class="active"><a href="#">List</a></li>
+		<li><a href="barchart.html">Product</a></li>
+		<li><a href="Analysis.html">Analysis</a></li>
+    </ul>
+    </div>
+            <div>
+                <table>
+                    <tr id="tableHeader">
+                        <td>PRODUCT</td>
+                        <td>MADE</td>
+                        <td>PRIZE</td>
+                   </tr>
+                    <tr ng-repeat="x in product">
+                        <td>{{ x.Product }}</td>
+                        <td>{{ x.Manufacture }}</td>
+                        <td>{{ x.Prize }}</td>
+                    </tr>
+                </table>
+            </div>
+            
+</div>
+        
+</div>
+ 
+            <div ng-include src="'commonFooter.html'"> ></div>
+        
+    </body>
+</html>
