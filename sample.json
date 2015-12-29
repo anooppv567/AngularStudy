@@ -3,41 +3,41 @@
   {
     "Product" : "iPhone",
     "Manufacture" : "Apple",
-    "Prize" : "700$"
+    "Prize" : 700
             },{
             "Product" : "iPad",
             "Manufacture" : "Apple",
-            "Prize" : "600$"
+            "Prize" : 600
             },
       {
             "Product" : "Phone",
             "Manufacture" : "Google",
-            "Prize" : "500$"
+            "Prize" : 500
             },
             {
             "Product" : "Laptop",
             "Manufacture" : "Apple",
-            "Prize" : "2000$"
+            "Prize" : 2000
             },
             {
             "Product" : "Laptop",
             "Manufacture" : "Lenovo",
-            "Prize" : "1000$"
+            "Prize" : 1000
             },
             {
             "Product" : "TV",
             "Manufacture" : "Samsung",
-            "Prize" : "5500$"
+            "Prize" : 5500
             },
             {
             "Product" : "TV",
             "Manufacture" : "Sony",
-            "Prize" : "700$"
+            "Prize" : 700
             },
             {
             "Product" : "TV",
             "Manufacture" : "LG",
-            "Prize" : "400$"
+            "Prize" : 400
             }
             
   

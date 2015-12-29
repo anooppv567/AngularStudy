@@ -119,7 +119,7 @@ function InitChart(barData1,graphID) {
         window.location.href = 'drilldownPage.html';
         });
     
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#"+graphID).append("svg")
     .attr("width", WIDTH )
     .attr("height", HEIGHT)
     .append("g")

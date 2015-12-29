@@ -50,13 +50,26 @@
     </ul>
     </div>
             <div>
+                
                 <table>
-                    <tr id="tableHeader">
-                        <td>PRODUCT</td>
-                        <td>MADE</td>
-                        <td>PRIZE</td>
+                    <tr id="tableHeader" show-filter="true">
+                        <td>
+                            <a href="#" ng-click="orderByField='Product'; reverseSort = !reverseSort">
+                            PRODUCT
+                            <span ng-show="orderByField == 'Product'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>                            </a>
+                        </td>
+                        <td>
+                            <a href="#" ng-click="orderByField='Manufacture'; reverseSort = !reverseSort">
+                            MADE
+                            <span ng-show="orderByField == 'Manufacture'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                        </td>
+                        <td>
+                            <a href="#" ng-click="orderByField='Prize'; reverseSort = !reverseSort">
+                            PRIZE($)
+                            <span ng-show="orderByField == 'Prize'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                        </td>
                    </tr>
-                    <tr ng-repeat="x in product">
+                    <tr ng-repeat="x in product | orderBy:orderByField:reverseSort ">
                         <td>{{ x.Product }}</td>
                         <td>{{ x.Manufacture }}</td>
                         <td>{{ x.Prize }}</td>
