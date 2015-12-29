@@ -4,154 +4,160 @@
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" type="text/css" href="commonHeader.css">
-            <link rel="stylesheet" type="text/css" href="Analysis.css">
-         <script src="jquery.js"></script>
-         <script src="d3.js"></script>
-         <script src="Angular.js"></script>
-          <script src="Analysis.js"></script>
-           <script type="text/javascript" src="DashBoard.js"></script>
-           <script src="Barchart.js"></script>
-           
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" type="text/css" href="commonHeader.css">
+                    <link rel="stylesheet" type="text/css" href="Analysis.css">
+                        <script src="jquery.js"></script>
+                        <script src="d3.js"></script>
+                        <script src="Angular.js"></script>
+                        <script src="Analysis.js"></script>
+                        <script type="text/javascript" src="DashBoard.js"></script>
+                        <script src="Barchart.js"></script>
+                        
                         <script>
-          
-            $(function() {
-
-            $('body').css('display', 'none');
-
-            $('body').fadeIn(1500);
-
-
-            $('.link').click(function(event) {
-
-            event.preventDefault();
-
-            newLocation = this.href;
-
-            $('body').fadeOut(1500, newpage);
-
-            });
-
-            function newpage() {
-
-            window.location = newLocation;
-
-            }
-
-            });
-
+                            
+                            $(function() {
+                              
+                              $('body').css('display', 'none');
+                              
+                              $('body').fadeIn(1500);
+                              
+                              
+                              $('.link').click(function(event) {
+                                               
+                                               event.preventDefault();
+                                               
+                                               newLocation = this.href;
+                                               
+                                               $('body').fadeOut(1500, newpage);
+                                               
+                                               });
+                              
+                              function newpage() {
+                              
+                              window.location = newLocation;
+                              
+                              }
+                              
+                              });
+                              
+                            </script>
+                        
+                        </head>
+    <body ng-app>
+        <body ng-app>
+            <div ng-include src="'commonHeader.html'"></div>
+            <div id="page_wrapper">
+                <div id="mainContainer">
+                    <div id="metaltop-lilac">
+                        <ul>
+                            <li><a href="DashBoard.html">List</a></li>
+                            <li><a href="barchart.html">Product</a></li>
+                            <li class="active"><a href="#">Analysis</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div id="chart1">
+                        <div style="graph_title"><h1>US</h1></div>
+                        
+                    </div>
+                    <div id="chart2">
+                        <div style="graph_title"><h1>Asia</h1></div>
+                        
+                    </div>
+                    <div id="chart3">
+                        <div style="graph_title"><h1>Europe</h1></div>
+                        
+                    </div>
+                    
+                    <div id="mainTitle">
+                        <div style="graph_title"><h1>Profit</h1></div>
+                        <div id="graph1" class="graph-container" ></div>
+                    </div>
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+            <div ng-include src="'commonFooter.html'"> </div>
+        </body>
+        <script>
+            
+            var pieData1=[{"label":"Textile", "value":70,"bgcolor":"blue"},
+                          {"label":"Pharmacy", "value":35,"bgcolor":"yellow"},
+                          {"label":"Stationary", "value":40,"bgcolor":"green"}];
+                          var pieData2=[{"label":"Textile", "value":60,"bgcolor":"blue"},
+                                        {"label":"Pharmacy", "value":45,"bgcolor":"yellow"},
+                                        {"label":"Stationary", "value":30,"bgcolor":"green"}];
+                                        var pieData3=[{"label":"Textile;", "value":50,"bgcolor":"blue"},
+                                                      {"label":"Pharmacy", "value":35,"bgcolor":"yellow"},
+                                                      {"label":"Stationary", "value":30,"bgcolor":"green"}];
+                                                      // var graphID='chart';
+                                                      var finalArray=[];
+                                                      finalArray.push(pieData1);
+                                                      finalArray.push(pieData2);
+                                                      finalArray.push(pieData3);
+                                                      var graphIDArray=[];
+                                                      graphIDArray.push('chart1');
+                                                      graphIDArray.push('chart2');
+                                                      graphIDArray.push('chart3');
+                                                      console.log(barData1);
+                                                      for(var i=0;i<finalArray.length;i++)
+                                                      {
+                                                          if(i<graphIDArray.length)
+                                                          {
+                                                              // InitChart(finalArray[i],graphIDArray[i]);
+                                                              drawPieWith(finalArray[i],graphIDArray[i]);
+                                                          }
+                                                      }
+        
+        
+        var barData1 = [
+                        {
+                        'x': '2010',
+                        'y': 25,
+                        'color' : 'red'
+                        }, 
+                        {
+                        'x': '2011',
+                        'y': 35,
+                        'color' : 'Yellow'
+                        }, 
+                        {
+                        'x': '2012',
+                        'y': 45,
+                        'color' : 'green'
+                        }, 
+                        {
+                        'x': '2013',
+                        'y': 55,
+                        'color' : 'orange'
+                        }, 
+                        {
+                        'x': '2014',
+                        'y': 65,
+                        'color' : 'black'
+                        }, 
+                        {
+                        'x': '2015',
+                        'y': 75,
+                        'color' : 'grey'
+                        }
+                        ];
+                        var finalArray=[];
+                        finalArray.push(barData1);
+                        var graphIDArray=[];
+                        graphIDArray.push('graph1');
+                        console.log(barData1);
+                        for(var i=0;i<finalArray.length;i++)
+                        {
+                            if(i<graphIDArray.length)
+                            {
+                                InitChart(finalArray[i],graphIDArray[i]);
+                            }
+                        }
         </script> 
         
-    </head>
-    <body ng-app>
-      <body ng-app>
-       <div ng-include src="'commonHeader.html'"></div>
-       <div id="page_wrapper">
-       <div id="mainContainer">
-             <div id="metaltop-lilac">
-	<ul>
-        <li><a href="DashBoard.html">List</a></li>
-        <li><a href="barchart.html">Product</a></li>
-        <li class="active"><a href="#">Analysis</a></li>
-
-	</ul>
-</div>
-         <div id="chart1">
-             <div style="graph_title"><h1>US</h1></div>
-
-       </div>
-           <div id="chart2">
-             <div style="graph_title"><h1>Asia</h1></div>
-
-       </div>
-           <div id="chart3">
-             <div style="graph_title"><h1>Europe</h1></div>
-     
-       </div>
-           
-        <div id="mainTitle">
-            <div style="graph_title"><h1>Profit</h1></div>
-            <div id="graph1" class="graph-container" ></div>            
-        </div>
-           
-          
-           
-          
-        </div>
-       </div>
-      <div ng-include src="'commonFooter.html'"> </div>
-    </body>
-    <script>
         
-        var pieData1=[{"label":"Textile", "value":70,"bgcolor":"blue"},
-		          {"label":"Pharmacy", "value":35,"bgcolor":"yellow"},
-		          {"label":"Stationary", "value":40,"bgcolor":"green"}];
-         var pieData2=[{"label":"Textile", "value":60,"bgcolor":"blue"},
-		          {"label":"Pharmacy", "value":45,"bgcolor":"yellow"},
-		          {"label":"Stationary", "value":30,"bgcolor":"green"}];
-          var pieData3=[{"label":"Textile;", "value":50,"bgcolor":"blue"},
-		          {"label":"Pharmacy", "value":35,"bgcolor":"yellow"},
-		          {"label":"Stationary", "value":30,"bgcolor":"green"}];
-          // var graphID='chart';
-           var finalArray=[];
-  finalArray.push(pieData1);
-  finalArray.push(pieData2);
-  finalArray.push(pieData3);
-  var graphIDArray=[];
-  graphIDArray.push('chart1');
-  graphIDArray.push('chart2');
-  graphIDArray.push('chart3');
-  console.log(barData1);
-  for(var i=0;i<finalArray.length;i++)
-  {
-      if(i<graphIDArray.length)
-      {
-     // InitChart(finalArray[i],graphIDArray[i]);
-      drawPieWith(finalArray[i],graphIDArray[i]);
-      }
-  }
-        
-          
-    var barData1 = [
-    {
-    'x': '2010',
-    'y': 25
-     }, 
-     {
-    'x': '2011',
-    'y': 35
-     }, 
-     {
-    'x': '2012',
-    'y': 45
-  }, 
-  {
-    'x': '2013',
-    'y': 55
-  }, 
-  {
-    'x': '2014',
-    'y': 65
-  }, 
-  {
-    'x': '2015',
-    'y': 75
-  }
-  ];
-  var finalArray=[];
-  finalArray.push(barData1);
-  var graphIDArray=[];
-  graphIDArray.push('graph1');
-  console.log(barData1);
-  for(var i=0;i<finalArray.length;i++)
-  {
-      if(i<graphIDArray.length)
-      {
-      InitChart(finalArray[i],graphIDArray[i]);
-  }
-  }
-    </script> 
-   
-          
 </html>
